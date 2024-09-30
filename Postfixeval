@@ -29,6 +29,50 @@ return;
 }
 int evalpostfix(char* postfix)
 {
+int op,i=0;
+while(op=postfix[i++]!='\0')
+{
+if(isdigit(op)
+{
+push(op-'0');
+}
+else{
+int op2=pop();
+int op1=pop();
+switch(op)
+{
+case '+':push(op1+op2);
+break;
+case '-':push(op1-op2);
+break;
+case '*':push(op1*op2);
+break;
+case '/':
+if(op2!=0)
+push(op1/op2);
+break;
+case '^':push(op1^op2);
+break;
+case '%':push(op1%op2);
+break;
+default:
+printf("invalid choice");
+return 0;
+}
+}
+}
+return pop();
+}
+int main()
+{
+char postfix[max];
+printf("enter the postfix expression");
+sacnf("%s",postfix);
+int res=evalpostfix(postfix);
+printf("value is:%d",res):
+return 0;
+}
+
 
 
 
