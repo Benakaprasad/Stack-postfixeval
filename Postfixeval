@@ -29,7 +29,7 @@ int evalpostfix(char* postfix)
 char op;int i=0;
 while(op=postfix[i++]!='\0')
 {
-if(isdigit(op)
+if(isdigit(op))
 {
 push(op-'0');
 }
@@ -64,9 +64,9 @@ int main()
 {
 char postfix[max];
 printf("enter the postfix expression");
-sacnf("%s",postfix);
+scanf("%s",postfix);
 int res=evalpostfix(postfix);
-printf("value is:%d",res):
+printf("value is:%d",res);
 return 0;
 }
 
