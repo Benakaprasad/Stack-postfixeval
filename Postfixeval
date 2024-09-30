@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
-#include<type.h>
+#include<ctype.h>
 #define max 100
 int stack[max];
 int top=-1;
@@ -12,7 +12,6 @@ printf("the stack is full");
 }
 else{
 stack[++top]=ele;
-printf("%d is pushed to stack",ele);
 }
 }
 int pop()
@@ -22,14 +21,12 @@ if(top<0)
 printf("the stack is empty");
 }
 else{
-ele=stack[top--];
-printf("%d is popped from the stack",ele);
+int ele=stack[top--];
 }
-return;
 }
 int evalpostfix(char* postfix)
 {
-int op,i=0;
+char op;int i=0;
 while(op=postfix[i++]!='\0')
 {
 if(isdigit(op)
