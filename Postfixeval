@@ -53,7 +53,7 @@ break;
 case '%':push(op1%op2);
 break;
 default:
-printf("invalid choice");
+printf("invalid choice\n");
 return 0;
 }
 }
@@ -63,10 +63,10 @@ return pop();
 int main()
 {
 char postfix[max];
-printf("enter the postfix expression");
+printf("enter the postfix expression\n");
 scanf("%s",postfix);
 int res=evalpostfix(postfix);
-printf("value is:%d",res);
+printf("value is:%d\n",res);
 return 0;
 }
 
